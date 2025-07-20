@@ -1,0 +1,202 @@
+
+
+body {
+    font-family: arial, sans-serif;
+    background-color: #fffafa;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #e60000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+header img {
+    height: 60px;
+    vertical-align: middle;
+    margin-right: 15px;
+}
+nav {
+    background-color: #ff3333;
+    padding: 12px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+nav a:hover {
+    text-decoration: underline;
+    /* màu chữ hover cho link trong dropdown sẽ được định nghĩa riêng */
+}
+section {
+    padding: 20px;
+    max-width: 1100px; /* Thêm để nội dung không quá rộng */
+    margin: auto; /* Căn giữa section */
+    background-color: white;
+    min-height: 60vh;
+}
+h2 {
+    border-bottom: 2px solid #e60000; /* Đổi màu cho hợp với theme */
+    padding-bottom: 5px;
+    color: #cc0000;
+}
+footer {
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ff3333;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #cc0000;
+    text-decoration: none; /* Bỏ gạch chân khi hover trong dropdown */
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Thêm style cho phần danh sách bài viết */
+.post-listing {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+.post-listing-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.post-listing-item h3 a {
+    text-decoration: none;
+    color: #333;
+}
+.post-listing-item h3 a:hover {
+    color: #cc0000;
+}
+
+
+
+/* ---------------------------------------------- */
+/* --- BỐ CỤC 2 CỘT CHO ẢNH VÀ TIỆN ÍCH --- */
+/* ---------------------------------------------- */
+
+.intro-container {
+    display: flex;
+    gap: 25px; /* Khoảng cách giữa ảnh và cột tiện ích */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.intro-image-wrapper {
+    flex: 2; /* Cho ảnh chiếm nhiều không gian hơn */
+    min-width: 0;
+}
+
+.intro-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+.intro-utilities-wrapper {
+    flex: 1; /* Cho cột tiện ích chiếm không gian còn lại */
+}
+
+/* --- ĐỊNH DẠNG CHO WIDGET TIỆN ÍCH --- */
+.sidebar-widget {
+    margin-bottom: 25px;
+}
+
+.sidebar-widget .widget-title {
+    background-color: #00a8e8; /* Màu xanh dương */
+    color: white;
+    padding: 12px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    /* Thêm hiệu ứng chấm bi */
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0);
+    background-size: 4px 4px;
+}
+
+.sidebar-widget .widget-content {
+    border: 1px solid #ddd;
+    border-top: none;
+    padding: 15px;
+}
+
+.widget-content .utility-banner {
+    display: block;
+    margin-bottom: 10px;
+}
+.widget-content .utility-banner:last-child {
+    margin-bottom: 0;
+}
+
+.widget-content .utility-banner img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+    transition: opacity 0.2s ease-in-out;
+}
+.widget-content .utility-banner:hover img {
+    opacity: 0.85;
+}
+
+/* Responsive: Khi màn hình nhỏ, các cột sẽ xếp chồng lên nhau */
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column;
+    }
+}
+
+.nav-admin-button {
+    float: right; /* Phép màu nằm ở đây! Đẩy nút này vềสุดขอบ bên phải */
+}
+
+/* Điều chỉnh lại menu con của nút Quản lý để nó không bị tràn ra ngoài màn hình */
+.nav-admin-button .dropdown-content {
+    right: 0;   /* Căn lề phải của menu con với lề phải của nút cha */
+    left: auto; /* Bỏ căn lề trái mặc định */
+    text-align: left; /* Đảm bảo chữ trong menu con căn trái */
+}
+
+/* Thêm đường kẻ phân cách cho đẹp */
+.nav-admin-button .divider {
+    height: 1px;
+    margin: 8px 0;
+    background-color: #e5e5e5;
+    opacity: 0.7;
+}
+
+/* Xóa float để tránh ảnh hưởng đến các phần tử sau thẻ nav */
+nav::after {
+    content: "";
+    display: table;
+    clear: both;
+}
